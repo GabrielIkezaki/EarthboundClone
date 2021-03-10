@@ -27,6 +27,3 @@ void Enemy::Set(std::string tempTexture, float tempXPos, float tempYPos, float t
 
 #pragma endregion
 
-
-
-

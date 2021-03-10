@@ -6,6 +6,7 @@ void Game::initVariables() {
 	this->window = nullptr;
 	this->videoM.height = 900;
 	this->videoM.width = 1200;
+	evPntr = &ev;
 }
 
 void Game::renderWindow() {
@@ -37,13 +38,22 @@ void Game::DrawBattleHUD() {
 	//battleHud.MoveCursor();
 }
 
+void Game::InitEnemy() {
+	//enemy.Set(enemySpriteAddress, 500, 250, 0.25f, 0.25f, 0, 0);
+}
+
+
 //Constructor
-Game::Game() {	
+Game::Game() {
+	//fonte.loadFromFile("./Fonts/EarthMommaRegular-ZGrK.ttf");
+	
+	selectScreen.Set(&enemy);
+	selectScreen.DisplayAddressText(str);
 	InitBackground();
 	InitBattleHUD();
 	initVariables();
 	renderWindow();
-	
+
 }
 
 //Destructor
@@ -73,15 +83,42 @@ void Game::PollEvents() {
 				window->close();
 				break;
 			}
+			break;
+
+		case sf::Event::TextEntered:
+
+			if (ev.text.unicode < 128)
+			{			
+				if (ev.key.code != 8) {  
+					str += static_cast<char>(ev.text.unicode);
+				}
+				else {
+					str.erase(str.end() - 1);
+				}
+
+				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return)) {
+
+					selectScreen.InstantiateEnemy();
+				}
+
+				text.setString(str);
+				selectScreen.DisplayAddressText(str);
+
+
+				std::cout << str << std::endl;
+			}
+
+			break;
 		}
+	
+
 	}
 }
 
 void Game::DrawEnemies() {
-	Enemy starman;
-	starman.Set("starman.png", 500, 250, 0.25f, 0.25f, 0, 0);
+
+	window->draw(*enemy.spritePntr);
 	
-	window->draw(*starman.spritePntr);
 }
 
 void Game::Update() {
@@ -90,10 +127,23 @@ void Game::Update() {
 
 void Game::Render() {
 	window->clear();
+	/**/
+	if (selectScreen.proceedToGame) {
+		DrawBackground();
+		DrawBattleHUD();
+		DrawEnemies();
 
-	DrawBackground();
-	DrawEnemies();
-	DrawBattleHUD();
+	}
+	else {
+		//selectScreen.OpenSelectWindow();
+		//window->draw(text);
+
+		window->draw(selectScreen.inputText);
+
+		//window->draw(*selectScreen.inputFieldSprite.spritePntr);
+		//std::cout << "Proceed Game" << std::endl;
+
+	}
 	
 	//draw game
 	window->display();

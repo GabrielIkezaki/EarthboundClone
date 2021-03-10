@@ -4,6 +4,8 @@
 #include<string>
 #include "Background.h"
 #include "BattleHUD.h"
+#include "SelectWindow.h"
+#include "Enemy.h"
 
 #include "SFML/Graphics.hpp"
 #include "SFML/System.hpp"
@@ -17,13 +19,22 @@ class Game
 private:
 	Background bground;
 	BattleHUD battleHud;
-	sf::RenderWindow* window;
+	SelectWindow selectScreen;
+	Enemy enemy;
+
+	sf::Text text;
 	sf::Event ev;
 	sf::VideoMode videoM;
-	void initVariables();
-	void renderWindow();
+
+	bool startGame = false;
+	std::string str = "./Sprites/";
 
 public:
+	std::string enemySpriteAddress;
+
+	sf::RenderWindow* window;
+	sf::Event* evPntr;
+
 	Game();
 	virtual ~Game();
 	bool isGameRunning();
@@ -36,5 +47,10 @@ public:
 	void InitBackground();
 	void DrawBattleHUD();
 	void InitBattleHUD();
+	void renderWindow();
+	void initVariables();
+	void InitEnemy();
+
+
 };
 
