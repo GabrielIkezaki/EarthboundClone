@@ -1,15 +1,6 @@
-﻿  Game.cpp
-C:\Users\Gabriel Mori\source\repos\Earthbound Sim\Earthbound Sim\Background.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\Gabriel Mori\source\repos\Earthbound Sim\Earthbound Sim\Background.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+﻿  SelectWindow.cpp
 C:\Users\Gabriel Mori\source\repos\Earthbound Sim\Earthbound Sim\SpriteObject.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 C:\Users\Gabriel Mori\source\repos\Earthbound Sim\Earthbound Sim\Enemy.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  SelectWindow.cpp
-C:\Users\Gabriel Mori\source\repos\Earthbound Sim\Earthbound Sim\SpriteObject.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\Gabriel Mori\source\repos\Earthbound Sim\Earthbound Sim\Enemy.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  main.cpp
-C:\Users\Gabriel Mori\source\repos\Earthbound Sim\Earthbound Sim\Background.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\Gabriel Mori\source\repos\Earthbound Sim\Earthbound Sim\Background.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\Gabriel Mori\source\repos\Earthbound Sim\Earthbound Sim\SpriteObject.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\Gabriel Mori\source\repos\Earthbound Sim\Earthbound Sim\Enemy.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  Generating Code...
+C:\Users\Gabriel Mori\source\repos\Earthbound Sim\Earthbound Sim\SelectItem.h(20,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Gabriel Mori\source\repos\Earthbound Sim\Earthbound Sim\SelectItem.h(20,24): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Earthbound Sim.vcxproj -> C:\Users\Gabriel Mori\source\repos\Earthbound Sim\Debug\Earthbound Sim.exe

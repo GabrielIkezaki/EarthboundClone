@@ -150,6 +150,7 @@
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SelectionSet.cpp" />
     <ClCompile Include="SelectWindow.cpp" />
     <ClCompile Include="SpriteObject.cpp" />
     <ClCompile Include="TextBox.cpp" />
@@ -159,6 +160,8 @@
     <ClInclude Include="BattleHUD.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="SelectionSet.h" />
+    <ClInclude Include="SelectItem.h" />
     <ClInclude Include="SelectWindow.h" />
     <ClInclude Include="SpriteObject.h" />
     <ClInclude Include="TextBox.h" />

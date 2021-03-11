@@ -1,3 +1,4 @@
+
 #include "Game.h"
 #include "Enemy.h"
 #include "Background.h"
@@ -46,8 +47,8 @@ void Game::InitEnemy() {
 //Constructor
 Game::Game() {
 	//fonte.loadFromFile("./Fonts/EarthMommaRegular-ZGrK.ttf");
-	
-	selectScreen.Set(&enemy);
+
+	selectScreen.Set(&enemy, window);
 	selectScreen.DisplayAddressText(str);
 	InitBackground();
 	InitBattleHUD();
@@ -88,8 +89,8 @@ void Game::PollEvents() {
 		case sf::Event::TextEntered:
 
 			if (ev.text.unicode < 128)
-			{			
-				if (ev.key.code != 8) {  
+			{
+				if (ev.key.code != 8) {
 					str += static_cast<char>(ev.text.unicode);
 				}
 				else {
@@ -110,7 +111,7 @@ void Game::PollEvents() {
 
 			break;
 		}
-	
+
 
 	}
 }
@@ -118,7 +119,7 @@ void Game::PollEvents() {
 void Game::DrawEnemies() {
 
 	window->draw(*enemy.spritePntr);
-	
+
 }
 
 void Game::Update() {
@@ -135,16 +136,13 @@ void Game::Render() {
 
 	}
 	else {
-		//selectScreen.OpenSelectWindow();
-		//window->draw(text);
 
 		window->draw(selectScreen.inputText);
-
-		//window->draw(*selectScreen.inputFieldSprite.spritePntr);
-		//std::cout << "Proceed Game" << std::endl;
-
+		for (int i = 0; i < selectScreen.MainMenu.selectItems.size(); i++) {
+			window->draw(selectScreen.MainMenu.selectItems[i].nameText);
+		}
 	}
-	
+
 	//draw game
 	window->display();
 }
